@@ -31,7 +31,7 @@ This README provides a brief overview of commonly used Linux commands along with
 25. **ps** ----->    Display information about running processes.
 26. **kill** ----->     Terminate processes.
 27. **top/htop** ----->     Display system processes and their resource usage.
-28. **ifconfig/ip* ----->    Display network interface information.
+28. **ifconfig/ip** ----->    Display network interface information.
 29. **ping** ----->    Send ICMP echo requests to network hosts.
 30. **traceroute** ----->    Trace the route taken by packets across an IP network.
 31. **netstat**   ----->      Display network connections, routing tables, interface statistics, masquerade connections, and multicast memberships.
