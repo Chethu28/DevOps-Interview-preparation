@@ -254,4 +254,22 @@ To remove a secret: `docker secret rm secret_name`
 
 ### 24. components in dockerfile
 
+`FROM`: for a base image the command must be on top of the docker
 
+`RUN`: To execute Command, it will create a layer in the image.
+
+`MAINTAINER`: Author/owner/description
+
+`COPY`: Copy files from the local system (docker VM) we need to provide a source, destination(We cant download file from the internet and any remote directory)
+
+`ADD`: Similar to copy but, it provides a feature to download files from the internet, also we extract files at the docker image side.
+
+`EXPOSE`: To Expose ports such as port 8080 for tomcat, port 80 for Nginx, etc.
+
+`WORKDIR`: To set a working directory for a container.
+
+`CMD`: Execute commands but during container creation
+
+`ENTRYPOINT`: Similar to CMD, but has higher priority over CMD, first commands will be executed by ENTRYPOINT only.
+
+`ENV`: Environment Variables
