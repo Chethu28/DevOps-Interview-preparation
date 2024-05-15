@@ -41,3 +41,4 @@
 41. **terraform force-unlock LOCK_ID** ----> forcefully unlock a locked state file, LOCK_ID provided when locking the State file beforehand
 42. **terraform login** -----> obtain and save API token for Terraform cloud
 43. **terraform logout** -----> Log out of Terraform Cloud, defaults to hostname app.terraform.io
+44. **terraform apply -var-file=filename.tfvars** -----> Considers variable from the file containing variable definitions.
