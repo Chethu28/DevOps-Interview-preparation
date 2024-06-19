@@ -1,0 +1,20 @@
+pipeline {
+  agent any 
+
+  tools {
+  maven "maven3"
+  }
+
+  environment {
+  AWS_ACCESS_KEY_ID = credentials("access_key")  
+  }
+
+  stages {
+    stage ("git-clone") {
+     steps {
+       git branch: 'main', url: 'https://github.com/Chethu28/springboot-app.git'
+     }
+    }
+  }
+  
+}
