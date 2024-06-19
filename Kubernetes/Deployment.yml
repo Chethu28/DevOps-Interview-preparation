@@ -19,3 +19,15 @@ spec:
         image: nginx:1.14.2
         ports:
         - containerPort: 80
+        env:
+         - name: CONFIGMAP_USERNAME
+           valueFrom:
+             configMapKeyRef:
+               name: myconfigmap
+               key: username
+
+      volumes:
+       - name: secret-volume
+         secret:
+           secretName: dotfile-secret
+
