@@ -58,5 +58,5 @@ This README provides a brief overview of commonly used Linux commands along with
 51. **cat file1 | tee file2 file3 file4**  ----->     used to copy the data from file1 to file2 file3 file4
 52. **cat file1 | tee -a file2 file3 file4** ----->    used to append the data from file1 to file2 file3 file4
 53. **useradd** ----->    add user 
-
-
+54. **ps aux --sort=-%cpu** ----->    list processes sorted by CPU usage
+55. **ps aux --sort=-%mem** ----->    list processes sorted by memory usage
