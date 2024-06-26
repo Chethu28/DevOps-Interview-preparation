@@ -106,3 +106,4 @@ RUN git clone $REPO_URL /app
 # Set the working directory
 WORKDIR /app
 ```
+```  docker build --build-arg REPO_URL=git@github.com:Chethu28/myprivate.git -t myapp1:latest . ```
