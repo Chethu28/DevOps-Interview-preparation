@@ -1,3 +1,11 @@
+## secerts on dockerfile
+
+```
+FROM ubuntu:jammy
+RUN --mount=type=secret,id=mysecret cat /run/secrets/mysecret
+```
+``` docker build --secret id=mysecret,src=./secretfile -t test . ```
+
 ## multistage dockerfile
 
 ```
