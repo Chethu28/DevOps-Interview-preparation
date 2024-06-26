@@ -76,7 +76,7 @@ CMD ["python", "app.py"]
 
 # cloning private it repo
 
-# run `ssh-keygen`  in instance and add the public rsa to github key.
+# run `ssh-keygen`  in instance .
 
 ```
 # Use an official base image
