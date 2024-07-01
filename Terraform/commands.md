@@ -42,3 +42,41 @@
 42. **terraform login** -----> obtain and save API token for Terraform cloud
 43. **terraform logout** -----> Log out of Terraform Cloud, defaults to hostname app.terraform.io
 44. **terraform apply -var-file=filename.tfvars** -----> Considers variable from the file containing variable definitions.
+
+
+#Scenario-1
+
+variable "environment" {
+  description = "Environment type"
+  type        = string
+  default     = "dev"
+}
+variable "instances" {
+  description = "Instance type"
+  type        = string
+}
+
+
+Using locals for Conditional Values
+You can use locals blocks to define conditional values that can be used across the configuration:
+
+locals {
+  instance_type = var.environment == "prod" ? "t2.large" : "t2.micro"
+}
+resource "aws_instance" "example" {
+  instance_type = local.instance_type
+  ami           = "ami-0c55b159cbfafe1f0"
+
+  # Other instance configuration
+}
+
+
+Using if Expressions
+You can use if expressions directly within resource attributes or variable definitions:
+
+resource "aws_instance" "example" {
+  instance_type = if var.environment == "prod" { "t2.large" } else { "t2.micro" }
+  ami           = "ami-0c55b159cbfafe1f0"
+
+  # Other instance configuration
+}
