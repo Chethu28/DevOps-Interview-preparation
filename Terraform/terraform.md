@@ -246,3 +246,19 @@ When upgrading Terraform versions:
 
   
 https://developer.hashicorp.com/terraform/language/upgrade-guides
+
+
+
+## 19. prevent_destory = true in terraform
+In Terraform, the prevent_destroy argument is used in resource definitions to prevent the resource from being destroyed, even if you run terraform destroy or if Terraform's state indicates that the resource is no longer needed.
+
+This can be helpful in preventing accidental deletion of important resources in a production environment. If prevent_destroy is set to true for a resource, Terraform will refuse to destroy that resource, and will throw an error if an operation that would destroy it is attempted.
+
+resource "aws_s3_bucket" "my_bucket" {
+  bucket = "my-unique-bucket-name"
+  acl    = "private"
+
+  lifecycle {
+    prevent_destroy = true
+  }
+}
