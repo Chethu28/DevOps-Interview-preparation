@@ -58,5 +58,19 @@ This README provides a brief overview of commonly used Linux commands along with
 51. **cat file1 | tee file2 file3 file4**  ----->     used to copy the data from file1 to file2 file3 file4
 52. **cat file1 | tee -a file2 file3 file4** ----->    used to append the data from file1 to file2 file3 file4
 53. **useradd** ----->    add user 
+54. **ps aux --sort=-%cpu** ----->    list processes sorted by CPU usage
+55. **ps aux --sort=-%mem** ----->    list processes sorted by memory usage
+56. pstree : gives complete hierarchy of a process how it has been triggered
+55. netstat -tuln : gives the ports that are already in use
+56. tcpdump : it will capture and analyze network packets for diagnizing the network connectivity issuesnetwork troubleshooting, application
+    latency, instance latency)
+58. df -h : disk space utilization for all the mounts
+59. df -sh foldername : to check disk spce utilization for particular folder
+60. journalctl -u servicename : complete logs of a particular service
+61. journalctl -b : complete logs from last boot or restart of linux machine
+62. lsof -i :port : to get which process id is using that port
+63. tail -n 10 filepath : shows last 10 lines in the file (same for head command)
 
-
+shortcuts: enter ctrl + R and enter key word of the command to reverse search the command which is used long back instead of writing entire command
+ 
+export PS1="Hema $: " - used to change the ubuntu@ipaddress: / $

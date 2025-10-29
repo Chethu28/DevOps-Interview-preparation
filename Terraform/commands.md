@@ -42,6 +42,7 @@
 42. **terraform login** -----> obtain and save API token for Terraform cloud
 43. **terraform logout** -----> Log out of Terraform Cloud, defaults to hostname app.terraform.io
 44. **terraform apply -var-file=filename.tfvars** -----> Considers variable from the file containing variable definitions.
+45. **instance_type = var.environment == "prod" ? "t2.large" : "t2.micro"** -----> conditional expression to create the instances conditionally 
 
 
 #Scenario-1
