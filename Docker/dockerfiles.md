@@ -1,3 +1,11 @@
+## secerts on dockerfile
+
+```
+FROM ubuntu:jammy
+RUN --mount=type=secret,id=mysecret cat /run/secrets/mysecret
+```
+``` docker build --secret id=mysecret,src=./secretfile -t test . ```
+
 ## multistage dockerfile
 
 ```
@@ -73,3 +81,37 @@ ENV NAME World
 CMD ["python", "app.py"]
 
 ```
+
+# cloning private it repo
+
+# run `ssh-keygen`  in instance .
+
+```
+# Use an official base image
+FROM alpine:latest
+
+# Install necessary packages
+RUN apk add --no-cache git openssh
+
+# Set build-time variable for Git repository URL
+ARG REPO_URL
+
+# Add SSH keys and set permissions
+# You will need to copy your SSH key to the Docker build context
+COPY id_rsa /root/.ssh/id_rsa
+COPY id_rsa.pub /root/.ssh/id_rsa.pub
+
+RUN mkdir -p /root/.ssh && \
+    chmod 600 /root/.ssh/id_rsa && \
+    chmod 600 /root/.ssh/id_rsa.pub
+
+# Add GitHub's known_hosts to avoid host verification prompt
+RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
+
+# Clone the private repository
+RUN git clone $REPO_URL /app
+
+# Set the working directory
+WORKDIR /app
+```
+```  docker build --build-arg REPO_URL=git@github.com:Chethu28/myprivate.git -t myapp1:latest . ```
